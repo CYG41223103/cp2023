@@ -45,4 +45,4 @@ void draw_japan_flag(gdImagePtr img) {
 
     // 繪製太陽內部
     gdImageFilledEllipse(img, center_x, center_y, sun_radius * 3, sun_radius * 3, red);
-}
+} 
