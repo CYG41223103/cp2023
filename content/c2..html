@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1.-1.html'>1.-1</a><li><a href='2.-1.html'>2.-1</a><li><a href='3.-1.html'>3.-1</a><li><a href='4.-1.html'>4.-1</a><li><a href='5.-1.html'>5.-1</a><li><a href='6.-1.html'>6.-1</a><li><a href='7.-1.html'>7.-1</a><li><a href='8.-1.html'>8.-1</a><li><a href='9.-1.html'>9.-1</a><li><a href='10.-1.html'>10.-1</a></li></ul><li class='has-children'><a href='C_EX.html'>C_EX</a><ul class='dropdown'><li><a href='1.-2.html'>1.-2</a><li><a href='2.-2.html'>2.-2</a><li><a href='3.-2.html'>3.-2</a><li><a href='4.-2.html'>4.-2</a><li><a href='5.-2.html'>5.-2</a><li><a href='6.-2.html'>6.-2</a><li><a href='7.-2.html'>7.-2</a><li><a href='8.-2.html'>8.-2</a><li><a href='9.-2.html'>9.-2</a><li><a href='10.-2.html'>10.-2</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='c1..html'>c1.</a><li><a href='c2..html'>c2.</a><li><a href='c3..html'>c3.</a><li><a href='c4..html'>c4.</a><li><a href='c5..html'>c5.</a><li><a href='c6..html'>c6.</a><li><a href='c7..html'>c7.</a><li><a href='c8..html'>c8.</a><li><a href='c9..html'>c9.</a><li><a href='c10..html'>c10.</a></li></ul><li class='has-children'><a href='C_EX.html'>C_EX</a><ul class='dropdown'><li><a href='ex1..html'>ex1.</a><li><a href='ex2..html'>ex2.</a><li><a href='ex3..html'>ex3.</a><li><a href='ex4..html'>ex4.</a><li><a href='ex5..html'>ex5.</a><li><a href='ex6..html'>ex6.</a><li><a href='ex7..html'>ex7.</a><li><a href='ex8..html'>ex8.</a><li><a href='ex9..html'>ex9.</a><li><a href='ex10..html'>ex10.</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,21 +142,50 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">4.-2 << <a href='4.-2.html'>Previous</a> <a href='6.-2.html'>Next</a> >> 6.-2<br /><h1>5.-2</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+    <div id="tipue_search_content">c1. << <a href='c1..html'>Previous</a> <a href='c3..html'>Next</a> >> c3.<br /><h1>c2.</h1>
+<h4>檢查給定的數字是否為醜數</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"># include &lt;stdio.h&gt;
+# include &lt;string.h&gt;
+
 int main()
 {
-int a,b;
-a = 10; b = 3;
-printf( "%d \n", a * b );
-printf( "%d \n", a / b );
-printf( "%d \n", a + b );
-printf( "%d \n", a - b );
-printf( "%d \n", a % b );
-return 0;
+int n,x=0;
+  printf("\n\n Check whether a given number is an ugly number:\n");
+  printf("----------------------------------------------------\n");
+  printf("Input an integer number: ");
+  scanf("%d",&amp;n);
+
+      if (n &lt;= 0) {  
+            printf("Input a correct number.");  
+        }
+       while (n != 1) 
+       {  
+            if (n % 5 == 0) 
+            {  
+                n /= 5;  
+            } 
+            else if (n % 3 == 0) 
+            {  
+                n /= 3;  
+            } 
+            else if (n % 2 == 0) 
+            {  
+                n /= 2;  
+            } 
+            else
+            {  
+                printf("It is not an ugly number.\n"); 
+                x = 1;  
+                break;  
+            }  
+        } 
+                if (x==0)
+                { 
+                printf("It is an ugly number.\n");
+                }
 }</pre>
-<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194106775033622558/image.png?ex=65af2598&amp;is=659cb098&amp;hm=687203801b204ef5b30ad2cf7562c32078cca14ac9be0af7cd7d033f84bbf562&amp;"/>
-<br />4.-2 << <a href='4.-2.html'>Previous</a> <a href='6.-2.html'>Next</a> >> 6.-2</div>
+<p><img height="228" src="https://cdn.discordapp.com/attachments/1171354666978771047/1194094245116661831/image.png?ex=65af19ed&amp;is=659ca4ed&amp;hm=b1a91c223e88dd95c5bfa8944b8fcbbf620aac1e386200a5ea132458d03feaec&amp;" width="453"/></p>
+<br />c1. << <a href='c1..html'>Previous</a> <a href='c3..html'>Next</a> >> c3.</div>
         
     <!-- footer -->
       <div class="container">

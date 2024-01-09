@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1.-1.html'>1.-1</a><li><a href='2.-1.html'>2.-1</a><li><a href='3.-1.html'>3.-1</a><li><a href='4.-1.html'>4.-1</a><li><a href='5.-1.html'>5.-1</a><li><a href='6.-1.html'>6.-1</a><li><a href='7.-1.html'>7.-1</a><li><a href='8.-1.html'>8.-1</a><li><a href='9.-1.html'>9.-1</a><li><a href='10.-1.html'>10.-1</a></li></ul><li class='has-children'><a href='C_EX.html'>C_EX</a><ul class='dropdown'><li><a href='1.-2.html'>1.-2</a><li><a href='2.-2.html'>2.-2</a><li><a href='3.-2.html'>3.-2</a><li><a href='4.-2.html'>4.-2</a><li><a href='5.-2.html'>5.-2</a><li><a href='6.-2.html'>6.-2</a><li><a href='7.-2.html'>7.-2</a><li><a href='8.-2.html'>8.-2</a><li><a href='9.-2.html'>9.-2</a><li><a href='10.-2.html'>10.-2</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='c1..html'>c1.</a><li><a href='c2..html'>c2.</a><li><a href='c3..html'>c3.</a><li><a href='c4..html'>c4.</a><li><a href='c5..html'>c5.</a><li><a href='c6..html'>c6.</a><li><a href='c7..html'>c7.</a><li><a href='c8..html'>c8.</a><li><a href='c9..html'>c9.</a><li><a href='c10..html'>c10.</a></li></ul><li class='has-children'><a href='C_EX.html'>C_EX</a><ul class='dropdown'><li><a href='ex1..html'>ex1.</a><li><a href='ex2..html'>ex2.</a><li><a href='ex3..html'>ex3.</a><li><a href='ex4..html'>ex4.</a><li><a href='ex5..html'>ex5.</a><li><a href='ex6..html'>ex6.</a><li><a href='ex7..html'>ex7.</a><li><a href='ex8..html'>ex8.</a><li><a href='ex9..html'>ex9.</a><li><a href='ex10..html'>ex10.</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,112 +142,21 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">6.-1 << <a href='6.-1.html'>Previous</a> <a href='8.-1.html'>Next</a> >> 8.-1<br /><h1>7.-1</h1>
-<h4>鏡像的二元樹鏡像</h4>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包括必要的頭文件
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
- 
-// 二元樹節點的結構
-struct TreeNode {
-    int data;
-    struct TreeNode* left;
-    struct TreeNode* right;
-};
- 
-// 建立新節點的函數
-struct TreeNode* createNode(int value) {
-    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));
-    if (newNode != NULL) {
-        newNode-&gt;data = value;
-        newNode-&gt;left = NULL;
-        newNode-&gt;right = NULL;
-    }
-    return newNode;
-}
- 
-// 向二元樹插入節點的函數
-struct TreeNode* insertNode(struct TreeNode* root, int value) {
-    if (root == NULL) {
-        return createNode(value);
-    }
- 
-    if (value &lt; root-&gt;data) {
-        root-&gt;left = insertNode(root-&gt;left, value);
-    } else if (value &gt; root-&gt;data) {
-        root-&gt;right = insertNode(root-&gt;right, value);
-    }
- 
-    return root;
-}
- 
-// 執行有序遍歷和列印元素的函數
-void inOrderTraversal(struct TreeNode* root) {
-    if (root != NULL) {
-        inOrderTraversal(root-&gt;left);
-        printf("%d ", root-&gt;data);
-        inOrderTraversal(root-&gt;right);
-    }
-}
- 
-// 建立二元樹鏡像的函數
-struct TreeNode* mirrorTree(struct TreeNode* root) {
-    if (root == NULL) {
-        return NULL;
-    }
- 
-    // 交換左右子樹
-    struct TreeNode* temp = root-&gt;left;
-    root-&gt;left = mirrorTree(root-&gt;right);
-    root-&gt;right = mirrorTree(temp);
- 
-    return root;
-}
- 
-// 釋放為二元樹分配的記憶體的函數
-void freeTree(struct TreeNode* root) {
-    if (root != NULL) {
-        freeTree(root-&gt;left);
-        freeTree(root-&gt;right);
-        free(root);
-    }
-}
- 
-int main() {
-    struct TreeNode* root = NULL;
-    int nodeValue;
-    char choice;
- 
-    // 將節點插入二元樹
-    do {
-        printf("Input a value to insert into the binary tree (enter 0 to stop): ");
-        scanf("%d", &amp;nodeValue);
- 
-        if (nodeValue != 0) {
-            root = insertNode(root, nodeValue);
-        }
- 
-    } while (nodeValue != 0);
- 
-    //列印原始二元樹
-    printf("\nOriginal Binary Tree (In-order Traversal): ");
-    inOrderTraversal(root);
-    printf("\n");
- 
-    // 建立並列印二元樹的鏡像
-    struct TreeNode* mirroredRoot = mirrorTree(root);
-    printf("\nMirrored Binary Tree (In-order Traversal): ");
-    inOrderTraversal(mirroredRoot);
-    printf("\n");
- 
-    // 釋放分配的記憶體
-    freeTree(root);
-    freeTree(mirroredRoot);
- 
-    return 0;
+    <div id="tipue_search_content">ex4. << <a href='ex4..html'>Previous</a> <a href='ex6..html'>Next</a> >> ex6.<br /><h1>ex5.</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
 }</pre>
-<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194097866810081280/image.png?ex=65af1d4c&amp;is=659ca84c&amp;hm=c70f1f498fe97a652156722b53938225be48834df131248845d7813b7d4878d1&amp;"/></p>
-<br />6.-1 << <a href='6.-1.html'>Previous</a> <a href='8.-1.html'>Next</a> >> 8.-1</div>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194106775033622558/image.png?ex=65af2598&amp;is=659cb098&amp;hm=687203801b204ef5b30ad2cf7562c32078cca14ac9be0af7cd7d033f84bbf562&amp;"/></p>
+<br />ex4. << <a href='ex4..html'>Previous</a> <a href='ex6..html'>Next</a> >> ex6.</div>
         
     <!-- footer -->
       <div class="container">
