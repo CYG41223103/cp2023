@@ -41,8 +41,33 @@ brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
 }
 &lt;/script&gt;</pre>
 <p>從 1 累加到 100:</p>
+<h1>W3</h1>
+<p>利用已經帶有 Brython 執行環境的倉儲, 在設定學員 Github Classroom 首次作業時, 即經由 template 置入, 因此學員只要:</p>
+<p>利用學校 email 帳號, 建立 Github 帳號, 以英文姓名縮寫加上一組數字, 選擇最短帳號名稱 例如: jfk40723199, jfk 為其自選的姓名縮寫, 而隨後則加上各自的學號.</p>
+<p>擁有 Github 帳號後, 即可透過 Github Classroom assignment 連結取得作業倉儲, 自行在倉儲中設定 Github Pages 後, 即可啟用作業網站 (以下<span> </span><span>所謂<span>網站均指靜態網站</span><span> </span></span>, 而用來編輯網站內容的<span>動態網站, 則統稱為網際內容編輯器</span>, 使用動態網站的目的在編輯靜態網站的內容). 網站內容經過編輯之後, 必須建立新的網站內容 (使用 generate_pages), 然後將新的網站內容更新到對應的 Github 倉儲中 (稱為改版, 其過程經歷 git add, git commit 與 git push 等階段).</p>
+<p>git 為分散式版次管理系統工具.</p>
+<p>git add</p>
+<p>git commit</p>
+<p>git push</p>
+<p>採用 Github Classroom 建立作業倉儲的問題:</p>
+<p>2023/09/26 在 1a w3 課程進行到建立各學員 site 作業時發現, 將 Replit 導入 Github 倉儲的流程中, 所產生的系統間權限設定, 必須由 Github Classroom 管理帳號 (以 cp2023 為例, 附屬在 mdecp2023 帳號下), 針對各用戶所提出的個別 Replit 權限 requests (以 site-scrum-1 倉儲為例, 只能透過 Replit 提出控管 mdecp2023/site-scrum-1 倉儲的權限)<span> </span><span>逐一進行設定</span>.</p>
+<p><img alt="" height="310" src="https://mde.tw/cpnote/images/mdecp2023_replit_requests.png" width="400"/></p>
+<p>(上圖顯示共有三名用戶針對 mdecp2023 帳號下的 Github Classroom 倉儲提出 Replit 連線要求, 其中只有最上方用戶的 request 取得 mdecp2023/site-scrum-1 倉儲的維護權限, 其餘兩則 requests 則仍處於待審核階段. 意即若要讓各用戶整合 Replit,<span> </span><span>每一個 Github Classroom 作業, 管理者都必須手動處理超過兩百則的 requests</span>)</p>
+<p>為去除管理者的手動設定負擔, 決定 2023 cp 與 cad 等課程將放棄使用 Github Classroom. 改為由各學員自行針對課程建立用來評分的課程倉儲與網站 (cp 課程建立 cp2023 倉儲, cad 課程則建立 cad2023 倉儲), 直接附屬在學員的 Github 帳號下, 後續的 submodule 設定與倉儲協同權限則統一由各學員自行負責</p>
+<h1>W4</h1>
+<p><span>各學員自行建立線上考試帳號</span></p>
+<p><span>依據<span> </span><a href="https://qry.nfu.edu.tw/teacher.php?selyr=1121&amp;teacher=%E5%9A%B4%E5%AE%B6%E9%8A%98">112 學年度第一學期教師授課表</a>中的學員修課名單, 利用 Teams 中的 Excel 取學員 Github 帳號.</span></p>
+<p><span>各學員自行建立 Github 評分倉儲 cp2023, 並設定 Github Pages</span></p>
+<p>登入 Github 後, 以 <a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a> 作為 Template 建立 cp2023 倉儲</p>
+<p><span>在 Replit IDE 上啟動 cp2023 內容編輯網站, 並將改版內容推送至 Github</span></p>
+<p>在同時登入 Github 與 Replit 的情況下, 將 Replit 帳號 connect 至 Github 帳號</p>
+<p>利用 import 將 cp2023 倉儲導入 Replit</p>
+<p>設定 .replit 為 python3 main.py</p>
+<p>根據 cp2023 倉儲中的 README.md 在 Shell 區執行 git submodule 與 pip install</p>
+<p>以 Run 執行 main.py 啟動倉儲內容編輯網頁</p>
+<p>利用<a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/b92b16621dd0246c352cf13d6463b333/raw/0bfa669750aba3abe48554509bbd43d65b6e5c82/hashlib_password_generator.py">密碼產生程式</a>將所選定的管理者密碼字串存入 Tool - Secrets 頁面中的 config 變數 (若無 config 環境變數設定, 動態網站登入管理者密碼將交由倉儲中的 config/config 字串進行驗證)</p>
+<p>重新啟倉儲內容編輯網頁後, 以新管理者密碼登入後改版並 Convert 為靜態內容後, 在 Git 頁面中將改版內容推至 Github</p>
 <h1>w5</h1>
-<p></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
 // https://blog.csdn.net/weixin_38468077/article/details/101069365
 // http://www.gnuplot.info/demo/
@@ -88,7 +113,7 @@ int main() {
 }</pre>
 <p></p>
 <p><img caption="false" height="212" src="/images/gnuplot_ex1.png" width="424"/></p>
-<h1>w15</h1>
+<h1>w6</h1>
 <p>台灣國旗</p>
 <p><img alt="" height="267" src="/images/taiwan_flag.png" width="400"/></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China
@@ -359,9 +384,32 @@ void draw_star(gdImagePtr img, int x, int y, int size, int color) {
 }
 </pre>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
-<div id="brython_div2"></div>
-<!-- editor2 結束 -->
-<hr/>
+<div id="brython_div2">
+<h1>W7</h1>
+<p>Map: site map 網站所有頁面</p>
+<p>EditA: edit all pages, 使用時機為(1)解決多人共用網站時的衝突, 或(2)刪除特定頁面</p>
+<p>Edit: edit one page, 先選頁面, 再選 Edit 然後才能進入編輯模式</p>
+<p>Config: 編輯網站標題, 若要編輯 site title, 必須更改 init.py 中的 site_title 字串內容</p>
+<p>Search: 頁面資料 html 原始碼內容搜尋</p>
+<p>IUpload: image upload, 影像檔案上傳, 資料會放入 images 目錄中</p>
+<p>IList: image file list, 列出存在 images 目錄下的影像檔案</p>
+<p>FUpload: file upload, 一般檔案上傳功能, 資料會放入 downloads 目錄中</p>
+<p>FList: file list, 列出位於 downloads 目錄下的檔案</p>
+<p>Logout: 登出</p>
+<p>Convert: 將 config/content.htm 經過分頁程式處理後, 轉為 content 目錄下的超文件</p>
+<h1>W10</h1>
+<p>線上簡報、網誌與多媒體影片製作工具:</p>
+<p><a href="https://leo-editor.github.io/leo-editor/">Leo Editor</a><span> </span>(<a href="https://groups.google.com/g/leo-editor">討論群組</a>) 為大綱管理系統, 可以當作程式開發的 IDE (Integrated Development Environment) 使用, 可用來編輯 reveal.js 簡報檔案中的 html 與 markdown, 也可用來編輯 Pelican 網誌 markdown 與轉檔, 並且在電腦輔助設計與分析過程中, 可以用來解讀 CoppeliaSim XML 格式檔案.</p>
+<p>因為 Python 3.12.0 環境下 Leo Editor 還無法正常透過 pip 安裝, 因此必須手動安裝 PyQt5 之後, 再使用 pip install leo, 所完成的 Python 3.12.0: <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EYf6RiAqXAFJllAizi_-iZ4BT9ZEn8-bT2V8TVjd9p446Q?e=NSCciC">Python312_leo_664_PyQt5.7z</a><span> </span>(需要下載密碼)</p>
+<p><a href="https://www.debugmode.com/wink.html">Wink</a><span> </span>為操作流程影片製作套件, 可以在電腦操作過程, 儲存關鍵頁面與滑鼠點擊區域後, 加上輔助文字說明後製作成 mp4 影片檔.</p>
+<p><a href="https://github.com/ShareX/ShareX/releases">ShareX</a><span> </span>為螢幕畫面取像或錄影套件, 可以擷取電腦畫面任一區域存為影像檔, 或者結合語音說明與滑鼠操作錄製說明影片.</p>
+<p><a href="https://github.com/obsproject/obs-studio/releases">OBS</a><span> </span>為電腦廣播製作系統, 可以結合各種語音、圖像與影片製作出多元的電腦操作說明影片.</p>
+<p>Wink 與 ShareX 都需要<span> </span><a href="https://ffmpeg.org/download.html#build-windows">ffmpeq.exe</a>.</p>
+<h1>W13</h1>
+<p>在這學期的計算機概論中，我學習到了許多平時不太會接觸到的技能。比如，在GitHub上建立網路倉儲，以及在Replit網站平台上使用C++進行繪圖。整體而言，這些技能讓我覺得挺有趣的。</p>
+<p>然而，在遇到一些問題時，真的讓人感到十分無奈。即使有GPT這樣的工具，有時候也無法完全解決我遇到的問題(應該是理解上的問題啦)。還有學校的網路問題真的体讓人困擾的。</p>
+</div>
+<!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
 </p>
