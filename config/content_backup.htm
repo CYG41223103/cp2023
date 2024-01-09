@@ -408,8 +408,479 @@ void draw_star(gdImagePtr img, int x, int y, int size, int color) {
 <h1>W13</h1>
 <p>在這學期的計算機概論中，我學習到了許多平時不太會接觸到的技能。比如，在GitHub上建立網路倉儲，以及在Replit網站平台上使用C++進行繪圖。整體而言，這些技能讓我覺得挺有趣的。</p>
 <p>然而，在遇到一些問題時，真的讓人感到十分無奈。即使有GPT這樣的工具，有時候也無法完全解決我遇到的問題(應該是理解上的問題啦)。還有學校的網路問題真的体讓人困擾的。</p>
+<h1>ANSIC</h1>
+<h2>1.</h2>
+<p><span>編寫一個 C 程式來列印您的姓名、出生日期和手機號碼。</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()  
+{
+    // Print Name
+    printf("Name   : Chiu\n"); 
+
+    // Print Date of Birth
+    printf("DOB    : September 14, 2004\n"); 
+
+    // Print Mobile Number
+    printf("Mobile : 0900-000-000\n"); 
+
+    // Indicate successful execution
+    return(0); 
+}</pre>
 </div>
-<!-- editor2 結束 --><hr/>
-<p>
+<!-- editor2 結束 -->
+<p><img alt="" src="https://discord.com/channels/@me/1171354666978771047/1194092421265506375" width="200"/><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194092421064175716/image.png?ex=65af183a&amp;is=659ca33a&amp;hm=c1514f7a343899793cc04c99fec1545167821bf8f97d587f6f8ae056e908dd09&amp;"/></p>
+<h2>2.</h2>
+<h4>檢查給定的數字是否為醜數</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"># include &lt;stdio.h&gt;
+# include &lt;string.h&gt;
+
+int main()
+{
+int n,x=0;
+  printf("\n\n Check whether a given number is an ugly number:\n");
+  printf("----------------------------------------------------\n");
+  printf("Input an integer number: ");
+  scanf("%d",&amp;n);
+
+      if (n &lt;= 0) {  
+            printf("Input a correct number.");  
+        }
+       while (n != 1) 
+       {  
+            if (n % 5 == 0) 
+            {  
+                n /= 5;  
+            } 
+            else if (n % 3 == 0) 
+            {  
+                n /= 3;  
+            } 
+            else if (n % 2 == 0) 
+            {  
+                n /= 2;  
+            } 
+            else
+            {  
+                printf("It is not an ugly number.\n"); 
+                x = 1;  
+                break;  
+            }  
+        } 
+                if (x==0)
+                { 
+                printf("It is an ugly number.\n");
+                }
+}</pre>
+<p><img height="228" src="https://cdn.discordapp.com/attachments/1171354666978771047/1194094245116661831/image.png?ex=65af19ed&amp;is=659ca4ed&amp;hm=b1a91c223e88dd95c5bfa8944b8fcbbf620aac1e386200a5ea132458d03feaec&amp;" width="453"/></p>
+<h2>3.</h2>
+<h4>反轉給定整數的數字</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int reverse(int n) {
+    int d, y = 0;
+    while (n) {
+        d = n % 10;
+        if ((n &gt; 0 &amp;&amp; y &gt; (0x7fffffff - d) / 10) ||
+            (n &lt; 0 &amp;&amp; y &lt; ((signed)0x80000000 - d) / 10)) {
+            return 0;  
+        }
+        y = y * 10 + d;
+        n = n / 10;
+    }
+    return y;  
+}
+
+int main(void)
+{
+    int i = 123;
+    printf("Original integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    i = 208478933;
+    printf("\nOriginal integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    i = -73634;
+    printf("\nOriginal integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    return 0;
+}
+</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194095351553069156/image.png?ex=65af1af5&amp;is=659ca5f5&amp;hm=367cb7f236e3d3aeba643b8c359e3ba016b4f3e828f2e8964767dcdc6632b473&amp;"/>
+<h2>4.</h2>
+<p><span>使用哈希 (#) 列印一個區塊 F，其中 F 的高度為 6 個字符，寬度為 5 個和 4 個字符。</span><span>並且還列印一個非常大的“C”。</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() 
+{
+    // Print top line of pattern
+    printf("    ######\n");
+
+    // Print second line of pattern
+    printf("  ##      ##\n");
+
+    // Print lines 3 to 7 of pattern
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+
+    // Print bottom line of pattern
+    printf("  ##      ##\n");
+
+    // Print last line of pattern
+    printf("    ######\n");
+
+    return(0);
+}</pre>
+<p><span><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194095856719237172/image.png?ex=65af1b6d&amp;is=659ca66d&amp;hm=fab61b332935b4b17f0e01936a2ec64c0656c3e32fdcf00ef8992e8179b6b062&amp;"/></span></p>
+<h2>5.</h2>
+<h4>從隨機數組和排序數組構造最大堆</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">  #include &lt;stdio.h&gt;          // 包含 printf 函數的標準輸入/輸出庫
+  #include &lt;stdlib.h&gt;         // 包含動態記憶體分配的標準庫
+
+  #define MAX_HEAP_SIZE 100   // 定義堆的最大大小
+
+  // 交換堆中兩個元素的函數
+  void swap(int *a, int *b) {
+      int temp = *a;
+      *a = *b;
+      *b = temp;
+  }
+
+  // 插入元素後維護最大堆屬性的函數
+  void heapifyDown(int arr[], int size, int index) {
+      int leftChild = 2 * index + 1;   // 計算左子索引
+      int rightChild = 2 * index + 2;  // 計算右子索引
+      int largest = index;              // 假設當前節點是最大的
+
+      // 求當前節點、左子節點、右子節點中最大的元素
+      if (leftChild &lt; size &amp;&amp; arr[leftChild] &gt; arr[largest]) {
+          largest = leftChild;
+      }
+
+      if (rightChild &lt; size &amp;&amp; arr[rightChild] &gt; arr[largest]) {
+          largest = rightChild;
+      }
+
+      // 如果最大的元素不是當前節點，則與最大的子節點交換並繼續向下堆
+      if (largest != index) {
+          swap(&amp;arr[index], &amp;arr[largest]);
+          heapifyDown(arr, size, largest);
+      }
+  }
+
+  // 從數組建立最大堆的函數
+  void buildMaxHeap(int arr[], int size) {
+      // 從最後一個非葉節點開始，向下堆化到根
+      for (int i = size / 2 - 1; i &gt;= 0; i--) {
+          heapifyDown(arr, size, i);
+      }
+  }
+
+  // 顯示數組元素的函數
+  void display(int arr[], int size) {
+      printf("Array elements: ");
+      for (int i = 0; i &lt; size; i++) {
+          printf("%d ", arr[i]);  // 列印數組中的每個元素
+      }
+      printf("\n");
+  }
+
+  int main() {
+      // 使用隨機數組進行測試
+      int randomArray[] = {6, 8, 12, 7, 1};               // 聲明一個隨機數組
+      int randomSize = sizeof(randomArray) / sizeof(randomArray[0]);  // 計算數組的大小
+
+      printf("Original Random Array:\n");
+      display(randomArray, randomSize);  // 顯示原始隨機數組
+
+      // 從隨機數組建立最大堆
+      buildMaxHeap(randomArray, randomSize);
+
+      printf("Max Heap from Random Array:\n");
+      display(randomArray, randomSize);  // 顯示隨機數組中的最大堆
+
+      // 使用排序數組進行測試
+      int sortedArray[] = {19, 12, 8, 6, 2};              // 聲明一個排序數組
+      int sortedSize = sizeof(sortedArray) / sizeof(sortedArray[0]);  // 計算數組的大小
+
+      printf("\nOriginal Sorted Array:\n");
+      display(sortedArray, sortedSize);  // 顯示原始排序數組
+
+      // 從排序數組建立最大堆
+      buildMaxHeap(sortedArray, sortedSize);
+
+      printf("Max Heap from Sorted Array:\n");
+      display(sortedArray, sortedSize);  // 顯示排序數組中的最大堆
+
+      return 0;                         // 返回0表示執行成功
+  }</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194096453182824598/image.png?ex=65af1bfb&amp;is=659ca6fb&amp;hm=2bb407da7a03e72e67298f5c52257e6bf323e788dc3b488af0a6565b49927cdf&amp;"/>
+<h2>6.</h2>
+<h4>從隨機數組和排序數組構造最小堆</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+// 用於堆化以節點 i 為根的子樹的函數，該節點是 arr[] 中的索引
+void minHeapify(int arr[], int n, int i) {
+    int smallest = i;  // 將最小的初始化為 root
+    int left = 2 * i + 1;  // 左子節點
+    int right = 2 * i + 2; // 右子節點
+
+    // 如果左子節點小於根
+    if (left &lt; n &amp;&amp; arr[left] &lt; arr[smallest])
+        smallest = left;
+
+    // 如果右子節點小於目前為止最小的子節點
+    if (right &lt; n &amp;&amp; arr[right] &lt; arr[smallest])
+        smallest = right;
+
+    // 如果最小的不是根
+    if (smallest != i) {
+        // 將找到的最小元素與根交換
+        int temp = arr[i];
+        arr[i] = arr[smallest];
+        arr[smallest] = temp;
+
+        // 遞歸地堆化受影響的子樹
+        minHeapify(arr, n, smallest);
+    }
+}
+
+// 從數組建立最小堆的函數
+void buildMinHeap(int arr[], int n) {
+    // 從最後一個非葉子節點開始，以相反的順序堆疊所有節點
+    for (int i = n / 2 - 1; i &gt;= 0; i--)
+        minHeapify(arr, n, i);
+}
+
+// 列印數組的函數
+void printArray(int arr[], int n) {
+    for (int i = 0; i &lt; n; ++i)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+
+// 測試堆構造函數
+int main() {
+    // 使用隨機數組進行測試
+    int randomArray[] = {4, 10, 3, 5, 1};
+    int n1 = sizeof(randomArray) / sizeof(randomArray[0]);
+
+    printf("Original Random Array: ");
+    printArray(randomArray, n1);
+
+    // 建構堆
+    buildMinHeap(randomArray, n1);
+
+    printf("Min Heap from Random Array: ");
+    printArray(randomArray, n1);
+
+    printf("\n");
+
+    // 使用排序數組進行測試
+    int sortedArray[] = {8, 7, 5, 4, 2};
+    int n2 = sizeof(sortedArray) / sizeof(sortedArray[0]);
+
+    printf("Original Sorted Array: ");
+    printArray(sortedArray, n2);
+
+    // 建構堆
+    buildMinHeap(sortedArray, n2);
+
+    printf("Min Heap from Sorted Array: ");
+    printArray(sortedArray, n2);
+
+    return 0;
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194096878007091282/image.png?ex=65af1c60&amp;is=659ca760&amp;hm=772260ff05b3f8d107cf06e4cd5394625fcf4e4437e1ab06aa4f863909b5b4ec&amp;"/>
+<h2>7.</h2>
+<h4>鏡像的二元樹鏡像</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包括必要的頭文件
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+ 
+// 二元樹節點的結構
+struct TreeNode {
+    int data;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};
+ 
+// 建立新節點的函數
+struct TreeNode* createNode(int value) {
+    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    if (newNode != NULL) {
+        newNode-&gt;data = value;
+        newNode-&gt;left = NULL;
+        newNode-&gt;right = NULL;
+    }
+    return newNode;
+}
+ 
+// 向二元樹插入節點的函數
+struct TreeNode* insertNode(struct TreeNode* root, int value) {
+    if (root == NULL) {
+        return createNode(value);
+    }
+ 
+    if (value &lt; root-&gt;data) {
+        root-&gt;left = insertNode(root-&gt;left, value);
+    } else if (value &gt; root-&gt;data) {
+        root-&gt;right = insertNode(root-&gt;right, value);
+    }
+ 
+    return root;
+}
+ 
+// 執行有序遍歷和列印元素的函數
+void inOrderTraversal(struct TreeNode* root) {
+    if (root != NULL) {
+        inOrderTraversal(root-&gt;left);
+        printf("%d ", root-&gt;data);
+        inOrderTraversal(root-&gt;right);
+    }
+}
+ 
+// 建立二元樹鏡像的函數
+struct TreeNode* mirrorTree(struct TreeNode* root) {
+    if (root == NULL) {
+        return NULL;
+    }
+ 
+    // 交換左右子樹
+    struct TreeNode* temp = root-&gt;left;
+    root-&gt;left = mirrorTree(root-&gt;right);
+    root-&gt;right = mirrorTree(temp);
+ 
+    return root;
+}
+ 
+// 釋放為二元樹分配的記憶體的函數
+void freeTree(struct TreeNode* root) {
+    if (root != NULL) {
+        freeTree(root-&gt;left);
+        freeTree(root-&gt;right);
+        free(root);
+    }
+}
+ 
+int main() {
+    struct TreeNode* root = NULL;
+    int nodeValue;
+    char choice;
+ 
+    // 將節點插入二元樹
+    do {
+        printf("Input a value to insert into the binary tree (enter 0 to stop): ");
+        scanf("%d", &amp;nodeValue);
+ 
+        if (nodeValue != 0) {
+            root = insertNode(root, nodeValue);
+        }
+ 
+    } while (nodeValue != 0);
+ 
+    //列印原始二元樹
+    printf("\nOriginal Binary Tree (In-order Traversal): ");
+    inOrderTraversal(root);
+    printf("\n");
+ 
+    // 建立並列印二元樹的鏡像
+    struct TreeNode* mirroredRoot = mirrorTree(root);
+    printf("\nMirrored Binary Tree (In-order Traversal): ");
+    inOrderTraversal(mirroredRoot);
+    printf("\n");
+ 
+    // 釋放分配的記憶體
+    freeTree(root);
+    freeTree(mirroredRoot);
+ 
+    return 0;
+}</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194097866810081280/image.png?ex=65af1d4c&amp;is=659ca84c&amp;hm=c70f1f498fe97a652156722b53938225be48834df131248845d7813b7d4878d1&amp;"/></p>
+<h2>8.</h2>
+<h4>找出兩個數字之間的最大數字</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+ 
+int main() {
+    int fno, sno, *ptr1 = &amp;fno, *ptr2 = &amp;sno;
+ 
+    printf("\n\n Pointer : Find the maximum number between two numbers :\n");
+    printf("------------------------------------------------------------\n");
+ 
+    printf(" Input the first number : ");
+    scanf("%d", ptr1); // 讀取使用者的第一個數字並使用 ptr1 儲存它
+    printf(" Input the second number : ");
+    scanf("%d", ptr2); // 從用戶那裡讀取第二個數字並使用 ptr2 儲存它
+ 
+    // 比較ptr1和ptr2指向的值，找出最大數
+    if (*ptr1 &gt; *ptr2) {
+        printf("\n\n %d is the maximum number.\n\n", *ptr1); // 列印最大數量
+    } else {
+        printf("\n\n %d is the maximum number.\n\n", *ptr2); //列印最大數量
+    }
+    return 0;
+}</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194098947317301258/image.png?ex=65af1e4e&amp;is=659ca94e&amp;hm=3456d43d79f07fc0f655c5ef14fe30290f6b77e7f577c0940e2a44c5bf94ae55&amp;"/></p>
+<h2>9.</h2>
+<p><span>寫一個C 程式來顯示多個變數。</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 125, b = 12345;        /* Declare and initialize integer variables */
+    long ax = 1234567890;          /* Declare and initialize long integer variable */
+    short s = 4043;                /* Declare and initialize short integer variable */
+    float x = 2.13459;             /* Declare and initialize floating-point variable */
+    double dx = 1.1415927;         /* Declare and initialize double precision variable */
+    char c = 'W';                  /* Declare and initialize character variable */
+    unsigned long ux = 2541567890; /* Declare and initialize unsigned long integer variable */
+
+    /* Various arithmetic operations and type conversions */
+    printf("a + c =  %d\n", a + c);
+    printf("x + c = %f\n", x + c);
+    printf("dx + x = %f\n", dx + x);
+    printf("((int) dx) + ax =  %ld\n", ((int) dx) + ax);
+    printf("a + x = %f\n", a + x);
+    printf("s + b =  %d\n", s + b);
+    printf("ax + b = %ld\n", ax + b);
+    printf("s + c =  %hd\n", s + c);
+    printf("ax + c = %ld\n", ax + c);
+    printf("ax + ux = %lu\n", ax + ux);
+
+    return 0;
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194099500239827034/image.png?ex=65af1ed2&amp;is=659ca9d2&amp;hm=b4125b35f32a2cc127687edf59b581bf3d0b2d71e1ec42b3d5ce0ffe6d8c798a&amp;"/>
+<h2>10.</h2>
+<p><span>寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的和。</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    int x, y;
+    int result1, result2; // 用于存储 scanf 的返回值
+
+    // 获取第一个整数
+    printf("Input the first integer: ");
+    result1 = scanf("%d", &amp;x);
+    if (result1 != 1) {
+        printf("Error: Please enter an integer.\n");
+        return 1;
+    }
+
+    // 获取第二个整数
+    printf("Input the second integer: ");
+    result2 = scanf("%d", &amp;y);
+    if (result2 != 1) {
+        printf("Error: Please enter an integer.\n");
+        return 1;
+    }
+
+    // 计算并输出它们的和
+    printf("Sum of the two integers = %d\n", x + y);
+
+    return 0;
+}</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194100107000434698/image.png?ex=65af1f62&amp;is=659caa62&amp;hm=d0dc0ff60e3d0d934c2cc3ac521d4c5e8b57ee69ade13a76eae44e4e32ae286c&amp;"/>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
 </p>
