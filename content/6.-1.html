@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1..html'>1.</a><li><a href='2..html'>2.</a><li><a href='3..html'>3.</a><li><a href='4..html'>4.</a><li><a href='5..html'>5.</a><li><a href='6..html'>6.</a><li><a href='7..html'>7.</a><li><a href='8..html'>8.</a><li><a href='9..html'>9.</a><li><a href='10..html'>10.</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1.-1.html'>1.-1</a><li><a href='2.-1.html'>2.-1</a><li><a href='3.-1.html'>3.-1</a><li><a href='4.-1.html'>4.-1</a><li><a href='5.-1.html'>5.-1</a><li><a href='6.-1.html'>6.-1</a><li><a href='7.-1.html'>7.-1</a><li><a href='8.-1.html'>8.-1</a><li><a href='9.-1.html'>9.-1</a><li><a href='10.-1.html'>10.-1</a></li></ul><li class='has-children'><a href='C_EX.html'>C_EX</a><ul class='dropdown'><li><a href='1.-2.html'>1.-2</a><li><a href='2.-2.html'>2.-2</a><li><a href='3.-2.html'>3.-2</a><li><a href='4.-2.html'>4.-2</a><li><a href='5.-2.html'>5.-2</a><li><a href='6.-2.html'>6.-2</a><li><a href='7.-2.html'>7.-2</a><li><a href='8.-2.html'>8.-2</a><li><a href='9.-2.html'>9.-2</a><li><a href='10.-2.html'>10.-2</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,90 +142,84 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">4. << <a href='4..html'>Previous</a> <a href='6..html'>Next</a> >> 6.<br /><h1>5.</h1>
-<h4>從隨機數組和排序數組構造最大堆</h4>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">  #include &lt;stdio.h&gt;          // 包含 printf 函數的標準輸入/輸出庫
-  #include &lt;stdlib.h&gt;         // 包含動態記憶體分配的標準庫
+    <div id="tipue_search_content">5.-1 << <a href='5.-1.html'>Previous</a> <a href='7.-1.html'>Next</a> >> 7.-1<br /><h1>6.-1</h1>
+<h4>從隨機數組和排序數組構造最小堆</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
-  #define MAX_HEAP_SIZE 100   // 定義堆的最大大小
+// 用於堆化以節點 i 為根的子樹的函數，該節點是 arr[] 中的索引
+void minHeapify(int arr[], int n, int i) {
+    int smallest = i;  // 將最小的初始化為 root
+    int left = 2 * i + 1;  // 左子節點
+    int right = 2 * i + 2; // 右子節點
 
-  // 交換堆中兩個元素的函數
-  void swap(int *a, int *b) {
-      int temp = *a;
-      *a = *b;
-      *b = temp;
-  }
+    // 如果左子節點小於根
+    if (left &lt; n &amp;&amp; arr[left] &lt; arr[smallest])
+        smallest = left;
 
-  // 插入元素後維護最大堆屬性的函數
-  void heapifyDown(int arr[], int size, int index) {
-      int leftChild = 2 * index + 1;   // 計算左子索引
-      int rightChild = 2 * index + 2;  // 計算右子索引
-      int largest = index;              // 假設當前節點是最大的
+    // 如果右子節點小於目前為止最小的子節點
+    if (right &lt; n &amp;&amp; arr[right] &lt; arr[smallest])
+        smallest = right;
 
-      // 求當前節點、左子節點、右子節點中最大的元素
-      if (leftChild &lt; size &amp;&amp; arr[leftChild] &gt; arr[largest]) {
-          largest = leftChild;
-      }
+    // 如果最小的不是根
+    if (smallest != i) {
+        // 將找到的最小元素與根交換
+        int temp = arr[i];
+        arr[i] = arr[smallest];
+        arr[smallest] = temp;
 
-      if (rightChild &lt; size &amp;&amp; arr[rightChild] &gt; arr[largest]) {
-          largest = rightChild;
-      }
+        // 遞歸地堆化受影響的子樹
+        minHeapify(arr, n, smallest);
+    }
+}
 
-      // 如果最大的元素不是當前節點，則與最大的子節點交換並繼續向下堆
-      if (largest != index) {
-          swap(&amp;arr[index], &amp;arr[largest]);
-          heapifyDown(arr, size, largest);
-      }
-  }
+// 從數組建立最小堆的函數
+void buildMinHeap(int arr[], int n) {
+    // 從最後一個非葉子節點開始，以相反的順序堆疊所有節點
+    for (int i = n / 2 - 1; i &gt;= 0; i--)
+        minHeapify(arr, n, i);
+}
 
-  // 從數組建立最大堆的函數
-  void buildMaxHeap(int arr[], int size) {
-      // 從最後一個非葉節點開始，向下堆化到根
-      for (int i = size / 2 - 1; i &gt;= 0; i--) {
-          heapifyDown(arr, size, i);
-      }
-  }
+// 列印數組的函數
+void printArray(int arr[], int n) {
+    for (int i = 0; i &lt; n; ++i)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
 
-  // 顯示數組元素的函數
-  void display(int arr[], int size) {
-      printf("Array elements: ");
-      for (int i = 0; i &lt; size; i++) {
-          printf("%d ", arr[i]);  // 列印數組中的每個元素
-      }
-      printf("\n");
-  }
+// 測試堆構造函數
+int main() {
+    // 使用隨機數組進行測試
+    int randomArray[] = {4, 10, 3, 5, 1};
+    int n1 = sizeof(randomArray) / sizeof(randomArray[0]);
 
-  int main() {
-      // 使用隨機數組進行測試
-      int randomArray[] = {6, 8, 12, 7, 1};               // 聲明一個隨機數組
-      int randomSize = sizeof(randomArray) / sizeof(randomArray[0]);  // 計算數組的大小
+    printf("Original Random Array: ");
+    printArray(randomArray, n1);
 
-      printf("Original Random Array:\n");
-      display(randomArray, randomSize);  // 顯示原始隨機數組
+    // 建構堆
+    buildMinHeap(randomArray, n1);
 
-      // 從隨機數組建立最大堆
-      buildMaxHeap(randomArray, randomSize);
+    printf("Min Heap from Random Array: ");
+    printArray(randomArray, n1);
 
-      printf("Max Heap from Random Array:\n");
-      display(randomArray, randomSize);  // 顯示隨機數組中的最大堆
+    printf("\n");
 
-      // 使用排序數組進行測試
-      int sortedArray[] = {19, 12, 8, 6, 2};              // 聲明一個排序數組
-      int sortedSize = sizeof(sortedArray) / sizeof(sortedArray[0]);  // 計算數組的大小
+    // 使用排序數組進行測試
+    int sortedArray[] = {8, 7, 5, 4, 2};
+    int n2 = sizeof(sortedArray) / sizeof(sortedArray[0]);
 
-      printf("\nOriginal Sorted Array:\n");
-      display(sortedArray, sortedSize);  // 顯示原始排序數組
+    printf("Original Sorted Array: ");
+    printArray(sortedArray, n2);
 
-      // 從排序數組建立最大堆
-      buildMaxHeap(sortedArray, sortedSize);
+    // 建構堆
+    buildMinHeap(sortedArray, n2);
 
-      printf("Max Heap from Sorted Array:\n");
-      display(sortedArray, sortedSize);  // 顯示排序數組中的最大堆
+    printf("Min Heap from Sorted Array: ");
+    printArray(sortedArray, n2);
 
-      return 0;                         // 返回0表示執行成功
-  }</pre>
-<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194096453182824598/image.png?ex=65af1bfb&amp;is=659ca6fb&amp;hm=2bb407da7a03e72e67298f5c52257e6bf323e788dc3b488af0a6565b49927cdf&amp;"/></p>
-<br />4. << <a href='4..html'>Previous</a> <a href='6..html'>Next</a> >> 6.</div>
+    return 0;
+}</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194096878007091282/image.png?ex=65af1c60&amp;is=659ca760&amp;hm=772260ff05b3f8d107cf06e4cd5394625fcf4e4437e1ab06aa4f863909b5b4ec&amp;"/></p>
+<br />5.-1 << <a href='5.-1.html'>Previous</a> <a href='7.-1.html'>Next</a> >> 7.-1</div>
         
     <!-- footer -->
       <div class="container">

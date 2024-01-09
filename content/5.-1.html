@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1..html'>1.</a><li><a href='2..html'>2.</a><li><a href='3..html'>3.</a><li><a href='4..html'>4.</a><li><a href='5..html'>5.</a><li><a href='6..html'>6.</a><li><a href='7..html'>7.</a><li><a href='8..html'>8.</a><li><a href='9..html'>9.</a><li><a href='10..html'>10.</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1.-1.html'>1.-1</a><li><a href='2.-1.html'>2.-1</a><li><a href='3.-1.html'>3.-1</a><li><a href='4.-1.html'>4.-1</a><li><a href='5.-1.html'>5.-1</a><li><a href='6.-1.html'>6.-1</a><li><a href='7.-1.html'>7.-1</a><li><a href='8.-1.html'>8.-1</a><li><a href='9.-1.html'>9.-1</a><li><a href='10.-1.html'>10.-1</a></li></ul><li class='has-children'><a href='C_EX.html'>C_EX</a><ul class='dropdown'><li><a href='1.-2.html'>1.-2</a><li><a href='2.-2.html'>2.-2</a><li><a href='3.-2.html'>3.-2</a><li><a href='4.-2.html'>4.-2</a><li><a href='5.-2.html'>5.-2</a><li><a href='6.-2.html'>6.-2</a><li><a href='7.-2.html'>7.-2</a><li><a href='8.-2.html'>8.-2</a><li><a href='9.-2.html'>9.-2</a><li><a href='10.-2.html'>10.-2</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,35 +142,90 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">3. << <a href='3..html'>Previous</a> <a href='5..html'>Next</a> >> 5.<br /><h1>4.</h1>
-<p><span>使用哈希 (#) 列印一個區塊 F，其中 F 的高度為 6 個字符，寬度為 5 個和 4 個字符。</span><span>並且還列印一個非常大的“C”。</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+    <div id="tipue_search_content">4.-1 << <a href='4.-1.html'>Previous</a> <a href='6.-1.html'>Next</a> >> 6.-1<br /><h1>5.-1</h1>
+<h4>從隨機數組和排序數組構造最大堆</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">  #include &lt;stdio.h&gt;          // 包含 printf 函數的標準輸入/輸出庫
+  #include &lt;stdlib.h&gt;         // 包含動態記憶體分配的標準庫
 
-int main() 
-{
-    // Print top line of pattern
-    printf("    ######\n");
+  #define MAX_HEAP_SIZE 100   // 定義堆的最大大小
 
-    // Print second line of pattern
-    printf("  ##      ##\n");
+  // 交換堆中兩個元素的函數
+  void swap(int *a, int *b) {
+      int temp = *a;
+      *a = *b;
+      *b = temp;
+  }
 
-    // Print lines 3 to 7 of pattern
-    printf(" #\n");
-    printf(" #\n");
-    printf(" #\n");
-    printf(" #\n");
-    printf(" #\n");
+  // 插入元素後維護最大堆屬性的函數
+  void heapifyDown(int arr[], int size, int index) {
+      int leftChild = 2 * index + 1;   // 計算左子索引
+      int rightChild = 2 * index + 2;  // 計算右子索引
+      int largest = index;              // 假設當前節點是最大的
 
-    // Print bottom line of pattern
-    printf("  ##      ##\n");
+      // 求當前節點、左子節點、右子節點中最大的元素
+      if (leftChild &lt; size &amp;&amp; arr[leftChild] &gt; arr[largest]) {
+          largest = leftChild;
+      }
 
-    // Print last line of pattern
-    printf("    ######\n");
+      if (rightChild &lt; size &amp;&amp; arr[rightChild] &gt; arr[largest]) {
+          largest = rightChild;
+      }
 
-    return(0);
-}</pre>
-<p><span><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194095856719237172/image.png?ex=65af1b6d&amp;is=659ca66d&amp;hm=fab61b332935b4b17f0e01936a2ec64c0656c3e32fdcf00ef8992e8179b6b062&amp;"/></span></p>
-<br />3. << <a href='3..html'>Previous</a> <a href='5..html'>Next</a> >> 5.</div>
+      // 如果最大的元素不是當前節點，則與最大的子節點交換並繼續向下堆
+      if (largest != index) {
+          swap(&amp;arr[index], &amp;arr[largest]);
+          heapifyDown(arr, size, largest);
+      }
+  }
+
+  // 從數組建立最大堆的函數
+  void buildMaxHeap(int arr[], int size) {
+      // 從最後一個非葉節點開始，向下堆化到根
+      for (int i = size / 2 - 1; i &gt;= 0; i--) {
+          heapifyDown(arr, size, i);
+      }
+  }
+
+  // 顯示數組元素的函數
+  void display(int arr[], int size) {
+      printf("Array elements: ");
+      for (int i = 0; i &lt; size; i++) {
+          printf("%d ", arr[i]);  // 列印數組中的每個元素
+      }
+      printf("\n");
+  }
+
+  int main() {
+      // 使用隨機數組進行測試
+      int randomArray[] = {6, 8, 12, 7, 1};               // 聲明一個隨機數組
+      int randomSize = sizeof(randomArray) / sizeof(randomArray[0]);  // 計算數組的大小
+
+      printf("Original Random Array:\n");
+      display(randomArray, randomSize);  // 顯示原始隨機數組
+
+      // 從隨機數組建立最大堆
+      buildMaxHeap(randomArray, randomSize);
+
+      printf("Max Heap from Random Array:\n");
+      display(randomArray, randomSize);  // 顯示隨機數組中的最大堆
+
+      // 使用排序數組進行測試
+      int sortedArray[] = {19, 12, 8, 6, 2};              // 聲明一個排序數組
+      int sortedSize = sizeof(sortedArray) / sizeof(sortedArray[0]);  // 計算數組的大小
+
+      printf("\nOriginal Sorted Array:\n");
+      display(sortedArray, sortedSize);  // 顯示原始排序數組
+
+      // 從排序數組建立最大堆
+      buildMaxHeap(sortedArray, sortedSize);
+
+      printf("Max Heap from Sorted Array:\n");
+      display(sortedArray, sortedSize);  // 顯示排序數組中的最大堆
+
+      return 0;                         // 返回0表示執行成功
+  }</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194096453182824598/image.png?ex=65af1bfb&amp;is=659ca6fb&amp;hm=2bb407da7a03e72e67298f5c52257e6bf323e788dc3b488af0a6565b49927cdf&amp;"/></p>
+<br />4.-1 << <a href='4.-1.html'>Previous</a> <a href='6.-1.html'>Next</a> >> 6.-1</div>
         
     <!-- footer -->
       <div class="container">

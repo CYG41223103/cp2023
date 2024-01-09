@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1..html'>1.</a><li><a href='2..html'>2.</a><li><a href='3..html'>3.</a><li><a href='4..html'>4.</a><li><a href='5..html'>5.</a><li><a href='6..html'>6.</a><li><a href='7..html'>7.</a><li><a href='8..html'>8.</a><li><a href='9..html'>9.</a><li><a href='10..html'>10.</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1.-1.html'>1.-1</a><li><a href='2.-1.html'>2.-1</a><li><a href='3.-1.html'>3.-1</a><li><a href='4.-1.html'>4.-1</a><li><a href='5.-1.html'>5.-1</a><li><a href='6.-1.html'>6.-1</a><li><a href='7.-1.html'>7.-1</a><li><a href='8.-1.html'>8.-1</a><li><a href='9.-1.html'>9.-1</a><li><a href='10.-1.html'>10.-1</a></li></ul><li class='has-children'><a href='C_EX.html'>C_EX</a><ul class='dropdown'><li><a href='1.-2.html'>1.-2</a><li><a href='2.-2.html'>2.-2</a><li><a href='3.-2.html'>3.-2</a><li><a href='4.-2.html'>4.-2</a><li><a href='5.-2.html'>5.-2</a><li><a href='6.-2.html'>6.-2</a><li><a href='7.-2.html'>7.-2</a><li><a href='8.-2.html'>8.-2</a><li><a href='9.-2.html'>9.-2</a><li><a href='10.-2.html'>10.-2</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,32 +142,35 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">7. << <a href='7..html'>Previous</a> <a href='9..html'>Next</a> >> 9.<br /><h1>8.</h1>
-<h4>找出兩個數字之間的最大數字</h4>
+    <div id="tipue_search_content">3.-1 << <a href='3.-1.html'>Previous</a> <a href='5.-1.html'>Next</a> >> 5.-1<br /><h1>4.-1</h1>
+<p><span>使用哈希 (#) 列印一個區塊 F，其中 F 的高度為 6 個字符，寬度為 5 個和 4 個字符。</span><span>並且還列印一個非常大的“C”。</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
- 
-int main() {
-    int fno, sno, *ptr1 = &amp;fno, *ptr2 = &amp;sno;
- 
-    printf("\n\n Pointer : Find the maximum number between two numbers :\n");
-    printf("------------------------------------------------------------\n");
- 
-    printf(" Input the first number : ");
-    scanf("%d", ptr1); // 讀取使用者的第一個數字並使用 ptr1 儲存它
-    printf(" Input the second number : ");
-    scanf("%d", ptr2); // 從用戶那裡讀取第二個數字並使用 ptr2 儲存它
- 
-    // 比較ptr1和ptr2指向的值，找出最大數
-    if (*ptr1 &gt; *ptr2) {
-        printf("\n\n %d is the maximum number.\n\n", *ptr1); // 列印最大數量
-    } else {
-        printf("\n\n %d is the maximum number.\n\n", *ptr2); //列印最大數量
-    }
-    return 0;
+
+int main() 
+{
+    // Print top line of pattern
+    printf("    ######\n");
+
+    // Print second line of pattern
+    printf("  ##      ##\n");
+
+    // Print lines 3 to 7 of pattern
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+
+    // Print bottom line of pattern
+    printf("  ##      ##\n");
+
+    // Print last line of pattern
+    printf("    ######\n");
+
+    return(0);
 }</pre>
-<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194098947317301258/image.png?ex=65af1e4e&amp;is=659ca94e&amp;hm=3456d43d79f07fc0f655c5ef14fe30290f6b77e7f577c0940e2a44c5bf94ae55&amp;"/></p>
-<br />7. << <a href='7..html'>Previous</a> <a href='9..html'>Next</a> >> 9.</div>
+<p><span><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194095856719237172/image.png?ex=65af1b6d&amp;is=659ca66d&amp;hm=fab61b332935b4b17f0e01936a2ec64c0656c3e32fdcf00ef8992e8179b6b062&amp;"/></span></p>
+<br />3.-1 << <a href='3.-1.html'>Previous</a> <a href='5.-1.html'>Next</a> >> 5.-1</div>
         
     <!-- footer -->
       <div class="container">

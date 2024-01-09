@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1..html'>1.</a><li><a href='2..html'>2.</a><li><a href='3..html'>3.</a><li><a href='4..html'>4.</a><li><a href='5..html'>5.</a><li><a href='6..html'>6.</a><li><a href='7..html'>7.</a><li><a href='8..html'>8.</a><li><a href='9..html'>9.</a><li><a href='10..html'>10.</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Brython.html'>Brython</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='W3.html'>W3</a><li><a href='W4.html'>W4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='台灣國旗.html'>台灣國旗</a><li><a href='日本國旗.html'>日本國旗</a><li><a href='美國國旗.html'>美國國旗</a></li></ul><li><a href='W7.html'>W7</a><li><a href='W10.html'>W10</a><li><a href='W13.html'>W13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1.-1.html'>1.-1</a><li><a href='2.-1.html'>2.-1</a><li><a href='3.-1.html'>3.-1</a><li><a href='4.-1.html'>4.-1</a><li><a href='5.-1.html'>5.-1</a><li><a href='6.-1.html'>6.-1</a><li><a href='7.-1.html'>7.-1</a><li><a href='8.-1.html'>8.-1</a><li><a href='9.-1.html'>9.-1</a><li><a href='10.-1.html'>10.-1</a></li></ul><li class='has-children'><a href='C_EX.html'>C_EX</a><ul class='dropdown'><li><a href='1.-2.html'>1.-2</a><li><a href='2.-2.html'>2.-2</a><li><a href='3.-2.html'>3.-2</a><li><a href='4.-2.html'>4.-2</a><li><a href='5.-2.html'>5.-2</a><li><a href='6.-2.html'>6.-2</a><li><a href='7.-2.html'>7.-2</a><li><a href='8.-2.html'>8.-2</a><li><a href='9.-2.html'>9.-2</a><li><a href='10.-2.html'>10.-2</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,84 +142,32 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">5. << <a href='5..html'>Previous</a> <a href='7..html'>Next</a> >> 7.<br /><h1>6.</h1>
-<h4>從隨機數組和排序數組構造最小堆</h4>
+    <div id="tipue_search_content">7.-1 << <a href='7.-1.html'>Previous</a> <a href='9.-1.html'>Next</a> >> 9.-1<br /><h1>8.-1</h1>
+<h4>找出兩個數字之間的最大數字</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-
-// 用於堆化以節點 i 為根的子樹的函數，該節點是 arr[] 中的索引
-void minHeapify(int arr[], int n, int i) {
-    int smallest = i;  // 將最小的初始化為 root
-    int left = 2 * i + 1;  // 左子節點
-    int right = 2 * i + 2; // 右子節點
-
-    // 如果左子節點小於根
-    if (left &lt; n &amp;&amp; arr[left] &lt; arr[smallest])
-        smallest = left;
-
-    // 如果右子節點小於目前為止最小的子節點
-    if (right &lt; n &amp;&amp; arr[right] &lt; arr[smallest])
-        smallest = right;
-
-    // 如果最小的不是根
-    if (smallest != i) {
-        // 將找到的最小元素與根交換
-        int temp = arr[i];
-        arr[i] = arr[smallest];
-        arr[smallest] = temp;
-
-        // 遞歸地堆化受影響的子樹
-        minHeapify(arr, n, smallest);
-    }
-}
-
-// 從數組建立最小堆的函數
-void buildMinHeap(int arr[], int n) {
-    // 從最後一個非葉子節點開始，以相反的順序堆疊所有節點
-    for (int i = n / 2 - 1; i &gt;= 0; i--)
-        minHeapify(arr, n, i);
-}
-
-// 列印數組的函數
-void printArray(int arr[], int n) {
-    for (int i = 0; i &lt; n; ++i)
-        printf("%d ", arr[i]);
-    printf("\n");
-}
-
-// 測試堆構造函數
+#include &lt;stdlib.h&gt;
+ 
 int main() {
-    // 使用隨機數組進行測試
-    int randomArray[] = {4, 10, 3, 5, 1};
-    int n1 = sizeof(randomArray) / sizeof(randomArray[0]);
-
-    printf("Original Random Array: ");
-    printArray(randomArray, n1);
-
-    // 建構堆
-    buildMinHeap(randomArray, n1);
-
-    printf("Min Heap from Random Array: ");
-    printArray(randomArray, n1);
-
-    printf("\n");
-
-    // 使用排序數組進行測試
-    int sortedArray[] = {8, 7, 5, 4, 2};
-    int n2 = sizeof(sortedArray) / sizeof(sortedArray[0]);
-
-    printf("Original Sorted Array: ");
-    printArray(sortedArray, n2);
-
-    // 建構堆
-    buildMinHeap(sortedArray, n2);
-
-    printf("Min Heap from Sorted Array: ");
-    printArray(sortedArray, n2);
-
+    int fno, sno, *ptr1 = &amp;fno, *ptr2 = &amp;sno;
+ 
+    printf("\n\n Pointer : Find the maximum number between two numbers :\n");
+    printf("------------------------------------------------------------\n");
+ 
+    printf(" Input the first number : ");
+    scanf("%d", ptr1); // 讀取使用者的第一個數字並使用 ptr1 儲存它
+    printf(" Input the second number : ");
+    scanf("%d", ptr2); // 從用戶那裡讀取第二個數字並使用 ptr2 儲存它
+ 
+    // 比較ptr1和ptr2指向的值，找出最大數
+    if (*ptr1 &gt; *ptr2) {
+        printf("\n\n %d is the maximum number.\n\n", *ptr1); // 列印最大數量
+    } else {
+        printf("\n\n %d is the maximum number.\n\n", *ptr2); //列印最大數量
+    }
     return 0;
 }</pre>
-<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194096878007091282/image.png?ex=65af1c60&amp;is=659ca760&amp;hm=772260ff05b3f8d107cf06e4cd5394625fcf4e4437e1ab06aa4f863909b5b4ec&amp;"/></p>
-<br />5. << <a href='5..html'>Previous</a> <a href='7..html'>Next</a> >> 7.</div>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194098947317301258/image.png?ex=65af1e4e&amp;is=659ca94e&amp;hm=3456d43d79f07fc0f655c5ef14fe30290f6b77e7f577c0940e2a44c5bf94ae55&amp;"/></p>
+<br />7.-1 << <a href='7.-1.html'>Previous</a> <a href='9.-1.html'>Next</a> >> 9.-1</div>
         
     <!-- footer -->
       <div class="container">

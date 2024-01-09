@@ -882,6 +882,145 @@ int main() {
 
     return 0;
 }</pre>
-<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194100107000434698/image.png?ex=65af1f62&amp;is=659caa62&amp;hm=d0dc0ff60e3d0d934c2cc3ac521d4c5e8b57ee69ade13a76eae44e4e32ae286c&amp;"/>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194100107000434698/image.png?ex=65af1f62&amp;is=659caa62&amp;hm=d0dc0ff60e3d0d934c2cc3ac521d4c5e8b57ee69ade13a76eae44e4e32ae286c&amp;"/></p>
+<h1>C_EX</h1>
+<h2>1.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
+return 0;
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194104770298904616/image.png?ex=65af23ba&amp;is=659caeba&amp;hm=2fbd3ccc1f0a893911ad0318cc8e4a6e91db3ac8d35bd3db1f51b50cb258bc95&amp;"/>
+<h2>2.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+/* read and display a number */
+int main () {
+ char c;
+ printf("Enter character: ");
+ c = getchar(); /* read the character in */
+ printf("Character entered: ");
+ putchar(c); /* write the character */
+ return(0);
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194105742710554736/image.png?ex=65af24a2&amp;is=659cafa2&amp;hm=30234705785a64863e690b032909e76517c6d14e01b4bc1a5435c6d8921b8642&amp;"/>
+<h2>3.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+printf("%d\n", 1 &amp;&amp; 3 );
+printf("%d\n", 0 &amp;&amp; 0 );
+printf("%d\n", 2 &amp;&amp; 2 );
+}</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194106251953590332/image.png?ex=65af251b&amp;is=659cb01b&amp;hm=1642f5b9dd650f9db4c2404beaba491e4e43b94697b1da1c0190a1586dd6e338&amp;"/></p>
+<h2>4.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194106476646637619/image.png?ex=65af2551&amp;is=659cb051&amp;hm=13890c45f6009b656c6064526a8fdfde7dfcd0a9e0c370243b5859d217e06631&amp;"/>
+<h2>5.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194106775033622558/image.png?ex=65af2598&amp;is=659cb098&amp;hm=687203801b204ef5b30ad2cf7562c32078cca14ac9be0af7cd7d033f84bbf562&amp;"/>
+<h2>6.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 1;
+int A = 8;
+int b = 2, c;
+c = A - a + b;
+/* 輸出 a, A, b, c 到螢幕 */
+printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
+return 0;
+}</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194107018072576000/image.png?ex=65af25d2&amp;is=659cb0d2&amp;hm=c4d09c6786bb4d2a5f80c8b2fb2173d52479e09cac6a3408bea0932973db9472&amp;"/></p>
+<h2>7.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+char x, y;
+x = 'a';
+y = (char)97;
+/* 輸出 x, y, x, 最後一個是以 ASCII 值顯示 y */
+printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
+return 0;
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194107321647911073/image.png?ex=65af261a&amp;is=659cb11a&amp;hm=36d2d613ff006a86d5de0a7891e766bfa7ba8030e701902df7e59334d4c9981c&amp;"/>
+<h2>8.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194107678390235156/image.png?ex=65af266f&amp;is=659cb16f&amp;hm=6c13e8e4c8b7f4ee5078c5f1208ae720b12123b39ca13adbef30e98907c0ce33&amp;"/>
+<h2>9.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+int a;
+a = 9;
+printf("%d\n", !a );
+a = 0;
+printf("%d\n", !a );
+}</pre>
+<img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194107979591594074/image.png?ex=65af26b7&amp;is=659cb1b7&amp;hm=f11fde66aa2bf0f68e289a15c9641e0c1309c6b5f08ef87f7520ea7454b907ed&amp;"/>
+<h2>10.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+float circle( int r ); /* 宣告 circle 的 prototype */
+void main()
+{
+float answer;
+answer = circle(8);
+printf( " 圓周長度是 %f", answer );
+}
+/* ====================
+ circle 函數, 計算 circle 的圓周長
+==================== */
+float circle( int r )
+{
+float result;
+result = 3.14159 * (double)2 * r;
+return ( result );
+}</pre>
+<p><img src="https://cdn.discordapp.com/attachments/1171354666978771047/1194108890221125723/image.png?ex=65af2790&amp;is=659cb290&amp;hm=dfa3fba3d4185945f91d979cdbad9d60fc5b8ccd857e6d73ae3e0ba3ea2bda85&amp;"/></p>
+<br/>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p>
