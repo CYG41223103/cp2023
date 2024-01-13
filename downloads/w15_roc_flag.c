@@ -16,7 +16,7 @@ int main() {
 
     draw_roc_flag(img);
 
-    FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");
+    FILE *outputFile = fopen("w15_roc_flag_in_gd.png", "wb");  // 修改檔名
     if (outputFile == NULL) {
         fprintf(stderr, "Error opening the output file.\n");
         return 1;
@@ -44,14 +44,14 @@ void draw_roc_flag(gdImagePtr img) {
     // 中央藍色圓形半徑為中央白日的 1又 2/15
     int blue_circle_dia = white_circle_dia + white_circle_dia * 2 / 15;
     // 根據 https://www.moi.gov.tw/cp.aspx?n=10621 訂定國旗三種顏色值
-    red = gdImageColorAllocate(img, 255, 0, 0);    // 紅色
-    white = gdImageColorAllocate(img, 255, 255, 255); // 白色
-    blue = gdImageColorAllocate(img, 0, 0, 149);     // 藍色
+    red = gdImageColorAllocate(img, 255, 0, 0);       // 紅色
+    white = gdImageColorAllocate(img, 255, 255, 255);  // 白色
+    blue = gdImageColorAllocate(img, 0, 0, 149);       // 藍色
     // 根據畫布大小塗上紅色長方形區域
     gdImageFilledRectangle(img, 0, 0, width, height, red);
     // 青天面積為整面國旗的 1/4, 也是採用長方形塗色
     gdImageFilledRectangle(img, 0, 0, (int)(width / 2.0), (int)(height / 2.0), blue);
-    // 先設法以填色畫出六個白色堆疊菱形
+    // 先設法以填色畫出一個白色堆疊菱形
     draw_white_sun(img, center_x, center_y, sun_radius, white);
     // 利用一個藍色大圓與白色小圓畫出藍色環狀
     gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
@@ -68,30 +68,34 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
     int ax, ay, bx, by, dx, dy, ex, ey;
     gdPoint points[4];
 
-    // A
     ax = center_x;
     ay = center_y - sun_radius;
-    // B
+    printf("%d,%d\n", ax, ay);
     bx = center_x - sun_radius * tan(15 * deg);
     by = center_y;
-    // E
     ex = center_x;
     ey = center_y + sun_radius;
-    // D
     dx = center_x + sun_radius * tan(15 * deg);
     dy = center_y;
 
-    // 對菱形區域範圍塗色
+    // A
     points[0].x = ax + sun_radius * sin(30 * deg);
     points[0].y = ay + sun_radius - sun_radius * cos(30 * deg);
+    printf("A coord: (%d,%d)\n", points[0].x, points[0].y);
+    // B
     points[1].x = bx + sr - sr * cos(30 * deg);
     points[1].y = by - sr * sin(30 * deg);
+    printf("B coord: (%d,%d)\n", points[1].x, points[1].y);
+    // E
     points[2].x = ex - sun_radius * sin(30 * deg);
     points[2].y = ey - (sun_radius - sun_radius * cos(30 * deg));
+    printf("E coord: (%d,%d)\n", points[2].x, points[2].y);
+    // D
     points[3].x = dx - (sr - sr * cos(30 * deg));
     points[3].y = dy + sr * sin(30 * deg);
+    printf("D coord: (%d,%d)\n\n", points[2].x, points[2].y);
 
-    // 在菱形區域內塗色
+    // 對菱形區域範圍塗色
     gdImageFilledPolygon(img, points, 4, color);
     // 在菱形區域外圍畫線, 明確界定菱形範圍
     gdImagePolygon(img, points, 4, color);
