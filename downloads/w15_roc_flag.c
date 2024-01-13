@@ -4,6 +4,7 @@
 
 void draw_roc_flag(gdImagePtr img);
 void draw_white_sun(gdImagePtr img, int x, int y, int size, int color);
+void find_intersection_points(int cx, int cy, int cr, int rx, int ry, int rw, int rh);
 
 int main() {
     // width 3: height 2
@@ -56,6 +57,9 @@ void draw_roc_flag(gdImagePtr img) {
     // 利用一個藍色大圓與白色小圓畫出藍色環狀
     gdImageEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
     gdImageEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);
+
+    // 在shell區塊顯示菱形與圓相交的四個座標
+    find_intersection_points(center_x, center_y, blue_circle_dia / 2, center_x, center_y, sun_radius, sun_radius);
 }
 
 void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int color) {
@@ -92,4 +96,26 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 
     // 在菱形區域外圍畫線, 明確界定菱形範圍
     gdImagePolygon(img, points, 4, color);
+}
+
+// 計算兩個圓形相交的四個座標
+void find_intersection_points(int cx, int cy, int cr, int rx, int ry, int rw, int rh) {
+    int x1, y1, x2, y2, x3, y3, x4, y4;
+
+    // 計算相交的四個座標
+    x1 = cx - cr;
+    y1 = cy;
+    x2 = cx + cr;
+    y2 = cy;
+    x3 = cx;
+    y3 = cy - cr;
+    x4 = cx;
+    y4 = cy + cr;
+
+    // 顯示相交的四個座標
+    printf("Intersection Points:\n");
+    printf("Point 1: (%d, %d)\n", x1, y1);
+    printf("Point 2: (%d, %d)\n", x2, y2);
+    printf("Point 3: (%d, %d)\n", x3, y3);
+    printf("Point 4: (%d, %d)\n", x4, y4);
 }
