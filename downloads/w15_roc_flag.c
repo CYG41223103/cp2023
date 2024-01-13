@@ -54,8 +54,8 @@ void draw_roc_flag(gdImagePtr img) {
     // 先設法以填色畫出第二個白色堆疊菱形
     draw_white_sun(img, center_x, center_y, sun_radius, white);
     // 利用一個藍色大圓與白色小圓畫出藍色環狀
-    gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
-    gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);
+    gdImageEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
+    gdImageEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);
 }
 
 void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int color) {
@@ -90,8 +90,6 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
     points[3].x = dx - (sr - sr * cos(60 * deg));  // 修改角度為 60 度
     points[3].y = dy + sr * sin(60 * deg);
 
-    // 對菱形區域範圍塗色
-    gdImageFilledPolygon(img, points, 4, color);
     // 在菱形區域外圍畫線, 明確界定菱形範圍
     gdImagePolygon(img, points, 4, color);
 }

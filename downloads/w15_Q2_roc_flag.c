@@ -87,8 +87,6 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
     points[3].x = dx - (sr - sr * cos(60 * deg));  // 修改角度為 60 度
     points[3].y = dy + sr * sin(60 * deg);
 
-    // 對菱形區域範圍塗色
-    gdImageFilledPolygon(img, points, 4, color);
     // 在菱形區域外圍畫線, 明確界定菱形範圍
     gdImagePolygon(img, points, 4, color);
 }
