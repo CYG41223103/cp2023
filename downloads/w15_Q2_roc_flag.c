@@ -16,7 +16,7 @@ int main() {
 
     draw_roc_flag(img);
 
-    FILE *outputFile = fopen("w15_roc_flag_in_gd.png", "wb");  // 修改檔名
+    FILE *outputFile = fopen("w15_Q2_roc_flag_in_gd.png", "wb");  // 修改檔名
     if (outputFile == NULL) {
         fprintf(stderr, "Error opening the output file.\n");
         return 1;
@@ -53,9 +53,6 @@ void draw_roc_flag(gdImagePtr img) {
     gdImageFilledRectangle(img, 0, 0, (int)(width / 2.0), (int)(height / 2.0), blue);
     // 先設法以填色畫出第二個白色堆疊菱形
     draw_white_sun(img, center_x, center_y, sun_radius, white);
-    // 利用一個藍色大圓與白色小圓畫出藍色環狀
-    gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
-    gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);
 }
 
 void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int color) {
